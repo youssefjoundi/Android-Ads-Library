@@ -22,7 +22,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -344,7 +343,6 @@ public class InterstitialAd {
                     case APPLOVIN:
                     case APPLOVIN_MAX:
                     case FAN_BIDDING_APPLOVIN_MAX:
-                        Toast.makeText(activity, "Here in load", Toast.LENGTH_SHORT).show();
                         maxInterstitialAd = new MaxInterstitialAd(appLovinInterstitialId, activity);
                         maxInterstitialAd.setListener(new MaxAdListener() {
                             @Override
@@ -862,7 +860,6 @@ public class InterstitialAd {
                     }
                     counter = 1;
                 } else {
-//                    Toast.makeText(activity, "do job either counter is not yet", Toast.LENGTH_SHORT).show();
                     adCloseListener.onAdClosed();
                     counter++;
                 }
@@ -958,9 +955,7 @@ public class InterstitialAd {
                         break;
 
                     case NONE:
-//                        Toast.makeText(activity, "here", Toast.LENGTH_SHORT).show();
                         adCloseListener.onAdClosed();
-//                            this.adCloseListener = adCloseListener;
                         break;
                 }
             }

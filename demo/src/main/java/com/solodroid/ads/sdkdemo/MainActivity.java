@@ -3,9 +3,11 @@ package com.solodroid.ads.sdkdemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+import android.widget.t;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.multidex.BuildConfig;
 
 import com.solodroid.ads.sdk.format.AdNetwork;
 import com.solodroid.ads.sdk.format.BannerAd;

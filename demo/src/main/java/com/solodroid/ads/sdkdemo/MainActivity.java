@@ -3,7 +3,6 @@ package com.solodroid.ads.sdkdemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-import android.widget.t;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -95,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "new intertital", Toast.LENGTH_SHORT).show();
     }
 
+
+    private void show1(){
+        Toast.makeText(this, "new Native Ads", Toast.LENGTH_SHORT).show();
+    }
+
     private void showInterstitialAd() {
         interstitialAd.show(() -> show());
     }
@@ -110,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 .setAppLovinNativeId(Constant.APPLOVIN_NATIVE_MANUAL_ID)
                 .setNativeAdStyle(Constant.STYLE_DEFAULT)
                 .setDarkTheme(false)
+                .setNativeEvent(() -> show1())
                 .build();
     }
 

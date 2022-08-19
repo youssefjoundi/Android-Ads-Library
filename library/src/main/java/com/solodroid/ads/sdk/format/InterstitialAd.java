@@ -172,13 +172,6 @@ public class InterstitialAd {
             return this;
         }
 
-        private AdCloseListener interIron;
-
-        public Builder setInterIronsource(AdCloseListener interIron) {
-            this.interIron = interIron;
-            return this;
-        }
-
         public interface AdCloseListener {
             void onAdClosed();
         }
@@ -440,7 +433,7 @@ public class InterstitialAd {
                             @Override
                             public void onInterstitialAdClosed() {
                                 Log.d(TAG, "onInterstitialAdClosed");
-                                interIron.onAdClosed();
+                                adCloseListener.onAdClosed();
                                 loadInterstitialAd();
                             }
 

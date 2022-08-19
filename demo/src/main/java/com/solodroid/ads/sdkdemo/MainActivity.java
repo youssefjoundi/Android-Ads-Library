@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 .setAdStatus(Constant.AD_STATUS)
                 .setAdNetwork(Constant.AD_NETWORK)
                 .setBackupAdNetwork(Constant.BACKUP_AD_NETWORK)
-                .setAdMobAppId(null)
+                .setAdMobAppId(getResources().getString(R.string.admob_app_id))
                 .setStartappAppId(Constant.STARTAPP_APP_ID)
                 .setUnityGameId(Constant.UNITY_GAME_ID)
-                .setAppLovinSdkKey("a")
+                .setAppLovinSdkKey(getResources().getString(R.string.applovin_sdk_key))
                 .setIronSourceAppKey(Constant.IRONSOURCE_APP_KEY)
                 .setDebug(BuildConfig.DEBUG)
                 .build();

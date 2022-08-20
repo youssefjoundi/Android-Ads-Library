@@ -491,6 +491,8 @@ public class NativeAd {
                         break;
                 }
 
+            } else {
+                nativeAdload.onNativeLoaded();
             }
 
         }

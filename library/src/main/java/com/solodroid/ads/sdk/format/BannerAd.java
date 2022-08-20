@@ -257,7 +257,7 @@ public class BannerAd {
                         break;
 
                     case FAN:
-                        fanAdView = new com.facebook.ads.AdView(activity, fanBannerId, AdSize.BANNER_HEIGHT_50);
+                        fanAdView = new com.facebook.ads.AdView(activity, googleAdManagerBannerId, AdSize.BANNER_HEIGHT_50);
                         RelativeLayout fanAdViewContainer = activity.findViewById(R.id.fan_banner_view_container);
                         fanAdViewContainer.addView(fanAdView);
                         com.facebook.ads.AdListener adListener = new com.facebook.ads.AdListener() {
@@ -588,7 +588,7 @@ public class BannerAd {
                         break;
 
                     case FAN:
-                        fanAdView = new com.facebook.ads.AdView(activity, fanBannerId, AdSize.BANNER_HEIGHT_50);
+                        fanAdView = new com.facebook.ads.AdView(activity, googleAdManagerBannerId, AdSize.BANNER_HEIGHT_50);
                         RelativeLayout fanAdViewContainer = activity.findViewById(R.id.fan_banner_view_container);
                         fanAdViewContainer.addView(fanAdView);
                         com.facebook.ads.AdListener adListener = new com.facebook.ads.AdListener() {

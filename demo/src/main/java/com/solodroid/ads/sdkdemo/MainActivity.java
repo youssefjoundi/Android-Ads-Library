@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showInterstitialAd() {
-        interstitialAd.show(() -> show());
+        interstitialAd.show();
     }
 
     private void loadNativeAd() {

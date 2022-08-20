@@ -456,6 +456,8 @@ public class InterstitialAd {
                         IronSource.loadInterstitial();
                         break;
                 }
+            } else {
+                adCloseListener.onAdClosed();
             }
         }
 

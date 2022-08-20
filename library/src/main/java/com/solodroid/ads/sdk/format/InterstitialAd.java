@@ -456,8 +456,6 @@ public class InterstitialAd {
                         IronSource.loadInterstitial();
                         break;
                 }
-            } else {
-                adCloseListener.onAdClosed();
             }
         }
 
@@ -866,6 +864,8 @@ public class InterstitialAd {
                     counter++;
                 }
                 Log.d(TAG, "Current counter : " + counter);
+            } else {
+                adCloseListener.onAdClosed();
             }
         }
 

@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 .setNativeAdStyle(Constant.STYLE_DEFAULT)
                 .setDarkTheme(false)
                 .setNativeEvent(() -> show1())
+                .setNativeFailed(()->show1())
                 .build();
     }
 

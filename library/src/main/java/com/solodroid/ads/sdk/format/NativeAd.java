@@ -69,6 +69,7 @@ public class NativeAd {
         TemplateView admobNativeAd;
         LinearLayout admobNativeBackground;
         private NativeAdloaded nativeAdload;
+        private NativeAdFailed nativeFailed;
         MediaView adManagerMediaView;
         AdManagerTemplateView adManagerNativeAd;
         LinearLayout adManagerNativeBackground;
@@ -91,6 +92,10 @@ public class NativeAd {
         public interface NativeAdloaded {
             void onNativeLoaded();
         }
+        public interface NativeAdFailed {
+            void onNativeFailed();
+        }
+
 
         private String adStatus = "";
         private String adNetwork = "";
@@ -176,6 +181,11 @@ public class NativeAd {
 
         public Builder setNativeEvent(NativeAdloaded nativeLoad){
             this.nativeAdload = nativeLoad;
+            return this;
+        }
+
+        public Builder setNativeFailed(NativeAdFailed nativeFailed){
+            this.nativeFailed = nativeFailed;
             return this;
         }
 
@@ -549,7 +559,7 @@ public class NativeAd {
                                         public void onAdFailedToLoad(@NonNull LoadAdError adError) {
                                             admobNativeAd.setVisibility(View.GONE);
                                             nativeAdViewContainer.setVisibility(View.GONE);
-                                            nativeAdload.onNativeLoaded();
+                                            nativeFailed.onNativeFailed();
                                         }
                                     })
                                     .build();
@@ -586,7 +596,7 @@ public class NativeAd {
                                         public void onAdFailedToLoad(@NonNull LoadAdError adError) {
                                             adManagerNativeAd.setVisibility(View.GONE);
                                             nativeAdViewContainer.setVisibility(View.GONE);
-                                            nativeAdload.onNativeLoaded();
+                                            nativeFailed.onNativeFailed();
                                         }
                                     })
                                     .build();
@@ -608,7 +618,7 @@ public class NativeAd {
                             public void onError(com.facebook.ads.Ad ad, AdError adError) {
                                 nativeAdViewContainer.setVisibility(View.GONE);
                                 fanNativeAdLayout.setVisibility(View.GONE);
-                                nativeAdload.onNativeLoaded();
+                                nativeFailed.onNativeFailed();
                             }
 
                             @Override
@@ -752,7 +762,7 @@ public class NativeAd {
                                     startappNativeAd.setVisibility(View.GONE);
                                     nativeAdViewContainer.setVisibility(View.GONE);
                                     Log.d(TAG, "StartApp Native Ad failed loaded");
-                                    nativeAdload.onNativeLoaded();
+                                    nativeFailed.onNativeFailed();
 
                                 }
                             };
@@ -790,7 +800,7 @@ public class NativeAd {
                                 @Override
                                 public void onNativeAdLoadFailed(final String adUnitId, final MaxError error) {
                                     // We recommend retrying with exponentially higher delays up to a maximum delay
-                                    nativeAdload.onNativeLoaded();
+                                    nativeFailed.onNativeFailed();
                                 }
 
                                 @Override
@@ -812,7 +822,7 @@ public class NativeAd {
 
                     case NONE:
                         nativeAdViewContainer.setVisibility(View.GONE);
-                        nativeAdload.onNativeLoaded();
+                        nativeFailed.onNativeFailed();
                         break;
                 }
 
